@@ -149,9 +149,11 @@ void encrypt(unsigned char plainText[], unsigned char key[], char file[]){
     for(i=0; i<SHA_DIGEST_LENGTH; i++){
         salt1 += (unsigned long long int)hash1[i];
     }
+    
     for(i=0; i<SHA256_DIGEST_LENGTH; i++){
         salt2 += (unsigned long long int)hash2[i];
     }
+    
     for(i=0; i<SHA512_DIGEST_LENGTH; i++){
         salt3 += (unsigned long long int)hash3[i];
     }
@@ -242,9 +244,11 @@ void decrypt(char file[], unsigned char key[]){
     for(i=0; i<SHA_DIGEST_LENGTH; i++){
         salt1 += (unsigned long long int)hash1[i];
     }
+    
     for(i=0; i<SHA256_DIGEST_LENGTH; i++){
         salt2 += (unsigned long long int)hash2[i];
     }
+    
     for(i=0; i<SHA512_DIGEST_LENGTH; i++){
         salt3 += (unsigned long long int)hash3[i];
     }
@@ -353,4 +357,3 @@ unsigned long long int myPseudoRand(unsigned long long int seed, unsigned long l
     
     return pseudo;
 }
-
