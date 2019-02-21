@@ -160,9 +160,11 @@ void encrypt(char file[], unsigned char key[]){
     for(i=0; i<SHA_DIGEST_LENGTH; i++){
         salt1 += (unsigned int)hash1[i];
     }
+    
     for(i=0; i<SHA256_DIGEST_LENGTH; i++){
         salt2 += (unsigned int)hash2[i];
     }
+    
     for(i=0; i<SHA512_DIGEST_LENGTH; i++){
         salt3 += (unsigned int)hash3[i];
     }
