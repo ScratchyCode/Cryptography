@@ -30,7 +30,6 @@ int main(){
     unsigned char *file = calloc(LEN,sizeof(unsigned char));
     unsigned char *key = calloc(LEN,sizeof(unsigned char));
     unsigned char *key2 = calloc(LEN,sizeof(unsigned char));
-    
     checkPtr(file);
     checkPtr(key);
     checkPtr(key2);
@@ -49,7 +48,7 @@ int main(){
             printf("\nInvalid choice!\n");
             exit(1);
         }
-            
+        
         getchar();
         switch(menu){
             case 1:
@@ -76,11 +75,11 @@ int main(){
                     file[i-1] = '\0';
                 }
             }
-        
+            
             encrypt(file,key);
-        
+            
             break;
-        
+            
             case 2:
             // decryption
             printf("\nEnter encrypted file name: ");
@@ -108,7 +107,7 @@ int main(){
             system("clear");
             exit(0);
         }
-    
+        
         printf("\nDo you want to go back to menu? (Yes = 1 || No = 0): ");
         scanf("%d",&menu);
         menu = (int)menu;
@@ -135,7 +134,6 @@ void encrypt(char file[], unsigned char key[]){
     unsigned char *hash2 = calloc(SHA256_DIGEST_LENGTH,sizeof(unsigned char));
     unsigned char *hash3 = calloc(SHA512_DIGEST_LENGTH,sizeof(unsigned char));
     unsigned char *encrypted = calloc(MAXLEN,sizeof(unsigned char));
-    
     checkPtr(hash1);
     checkPtr(hash2);
     checkPtr(hash3);
@@ -240,6 +238,7 @@ void encrypt(char file[], unsigned char key[]){
     salt2 = 0;
     salt3 = 0;
     lenKey = 0;
+    keyChar = 0;
     textChar = 0;
     
     free(hash1);
@@ -346,6 +345,7 @@ void decrypt(char file[], unsigned char key[]){
     salt2 = 0;
     salt3 = 0;
     lenKey = 0;
+    keyChar = 0;
     
     free(hash1);
     free(hash2);
